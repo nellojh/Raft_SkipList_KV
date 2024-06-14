@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/build/src",
+  "command": "/usr/bin/c++  -I/home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/src/include -std=gnu++20 -o CMakeFiles/skiplist.dir/skiplist/skiplist.cpp.o -c /home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/src/skiplist/skiplist.cpp",
+  "file": "/home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/src/skiplist/skiplist.cpp"
+},
+{
+  "directory": "/home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/build/test",
+  "command": "/usr/bin/c++  -I/home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/src/include -std=gnu++20 -o CMakeFiles/skiplist_test.dir/skiplist/test_skiplist.cpp.o -c /home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/test/skiplist/test_skiplist.cpp",
+  "file": "/home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/test/skiplist/test_skiplist.cpp"
+}
+]

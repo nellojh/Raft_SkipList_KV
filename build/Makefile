@@ -129,6 +129,19 @@ skiplist/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/skiplist.dir/build.make src/CMakeFiles/skiplist.dir/build
 .PHONY : skiplist/fast
 
+#=============================================================================
+# Target rules for targets named skiplist_test
+
+# Build rule for target.
+skiplist_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 skiplist_test
+.PHONY : skiplist_test
+
+# fast build rule for target.
+skiplist_test/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/skiplist_test.dir/build.make test/CMakeFiles/skiplist_test.dir/build
+.PHONY : skiplist_test/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -138,6 +151,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... skiplist"
+	@echo "... skiplist_test"
 .PHONY : help
 
 

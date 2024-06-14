@@ -116,6 +116,44 @@ depend:
 	cd /home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+test/CMakeFiles/skiplist_test.dir/rule:
+	cd /home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/skiplist_test.dir/rule
+.PHONY : test/CMakeFiles/skiplist_test.dir/rule
+
+# Convenience name for target.
+skiplist_test: test/CMakeFiles/skiplist_test.dir/rule
+.PHONY : skiplist_test
+
+# fast build rule for target.
+skiplist_test/fast:
+	cd /home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/skiplist_test.dir/build.make test/CMakeFiles/skiplist_test.dir/build
+.PHONY : skiplist_test/fast
+
+skiplist/test_skiplist.o: skiplist/test_skiplist.cpp.o
+.PHONY : skiplist/test_skiplist.o
+
+# target to build an object file
+skiplist/test_skiplist.cpp.o:
+	cd /home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/skiplist_test.dir/build.make test/CMakeFiles/skiplist_test.dir/skiplist/test_skiplist.cpp.o
+.PHONY : skiplist/test_skiplist.cpp.o
+
+skiplist/test_skiplist.i: skiplist/test_skiplist.cpp.i
+.PHONY : skiplist/test_skiplist.i
+
+# target to preprocess a source file
+skiplist/test_skiplist.cpp.i:
+	cd /home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/skiplist_test.dir/build.make test/CMakeFiles/skiplist_test.dir/skiplist/test_skiplist.cpp.i
+.PHONY : skiplist/test_skiplist.cpp.i
+
+skiplist/test_skiplist.s: skiplist/test_skiplist.cpp.s
+.PHONY : skiplist/test_skiplist.s
+
+# target to generate assembly for a file
+skiplist/test_skiplist.cpp.s:
+	cd /home/ljh/Desktop/Code/Cpp/Raft_SkipList_KV/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/skiplist_test.dir/build.make test/CMakeFiles/skiplist_test.dir/skiplist/test_skiplist.cpp.s
+.PHONY : skiplist/test_skiplist.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... skiplist_test"
+	@echo "... skiplist/test_skiplist.o"
+	@echo "... skiplist/test_skiplist.i"
+	@echo "... skiplist/test_skiplist.s"
 .PHONY : help
 
 

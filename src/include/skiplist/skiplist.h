@@ -27,22 +27,24 @@ class SkipList {
         }
     };
     void                 init();
-    Node *               find(const K &key, Node **update);
     static constexpr int max_level_ = 32;
     int                  skip_list_level;
     int                  element_count;
     Node *               head_, *tail_;
     Comp                 comp;
 
+    Node *find(const K &key, Node **update);
+
    public:
     SkipList();
     SkipList(Comp);
     ~SkipList();
-    int  get_random_level();
-    void insert(const K &key, const V &value);
-    bool erase(const K &key);
-    int  count(const K &key);
-    void clear();
-    int  size();
-    void display();
+    int   get_random_level();
+    void  insert(const K &key, const V &value);
+    bool  erase(const K &key);
+    Node *find(const K &key);
+    int   count(const K &key);
+    void  clear();
+    int   size();
+    void  display();
 };
