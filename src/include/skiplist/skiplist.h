@@ -19,7 +19,7 @@ class SkipList {
             : key_(k), value_(v), level_(level_) {
             this->next_ = new Node *[ level_ + 1 ];
             for (int i = 0; i <= level_; i++) {
-                this->next_ = nxt;
+                this->next_[ i ] = nxt;
             }
         }
         ~Node() {
