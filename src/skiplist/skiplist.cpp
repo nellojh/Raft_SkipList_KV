@@ -81,7 +81,7 @@ void SkipList<K, V, Comp>::insert(const K &key, const V &value) {
         update[ new_level_ ] = head_;
     }
     Node *new_node = new Node(key, value, new_level_);
-    for (int i = new_level_; i > 0; i--) {
+    for (int i = new_level_; i >= 0; i--) {
         p                    = update[ i ];
         new_node->next_[ i ] = p->next_[ i ];
         p->next_[ i ]        = new_node;
