@@ -13,6 +13,7 @@ int main() {
     skiplist.insert(6, 6);
     std::cout << "Insert Pass!"
               << "\n";
+    skiplist.find(1);
     std::cout << "skiplist.find(1)->value_:" << skiplist.find(1)->value_
               << "\n";
 }

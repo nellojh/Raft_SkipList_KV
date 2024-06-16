@@ -46,7 +46,7 @@ template <typename K, typename V, typename Comp>
 typename SkipList<K, V, Comp>::Node *SkipList<K, V, Comp>::find(const K &key,
                                                                 Node **update) {
     Node *p = head_;
-    for (int cur_level = max_level_; cur_level >= 0; cur_level--) {
+    for (int cur_level = skip_list_level; cur_level >= 0; cur_level--) {
         while (p->next_[ cur_level ] != tail_ &&
                comp(p->next_[ cur_level ]->key_, key)) {
             p = p->next_[ cur_level ];
@@ -57,7 +57,7 @@ typename SkipList<K, V, Comp>::Node *SkipList<K, V, Comp>::find(const K &key,
         }
     }
     p = p->next_[ 0 ];
-    return 0;
+    return p;
 }
 // insert function
 
