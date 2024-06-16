@@ -145,5 +145,21 @@ void SkipList<K, V, Comp>::display() {
     std::cout << "\n";
   }
 }
+template <typename K, typename V, typename Comp>
+int SkipList<K, V, Comp>::size() {
+  return element_count;
+}
+
+template <typename K, typename V, typename Comp>
+void SkipList<K, V, Comp>::clear() {
+  Node *p = head_->next_[0];
+  while (p != tail_) {
+    Node *tmp = p;
+    p = p->next_[0];
+    delete tmp;
+  }
+  skip_list_level = 0;
+  head_->next_[skip_list_level] = tail_;
+}
 
 template class SkipList<int, int>; // 显式实例化

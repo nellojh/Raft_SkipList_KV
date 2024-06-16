@@ -5,7 +5,7 @@
 
 int main() {
   // set random seed
-  //  srand((unsigned)time(nullptr));
+  srand((unsigned)time(nullptr));
 
   SkipList<int, int> skiplist;
   std::cout << "-------------------Test Insert-------------------\n";
@@ -30,6 +30,11 @@ int main() {
 
   std::cout << "-------------------Test Erase-------------------\n";
   skiplist.erase(4);
+  skiplist.display();
+  std::cout << "-------------------Test Pass-------------------\n";
+
+  std::cout << "-------------------Test Clear-------------------\n";
+  skiplist.clear();
   skiplist.display();
   std::cout << "-------------------Test Pass-------------------\n";
 }
