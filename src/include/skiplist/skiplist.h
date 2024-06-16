@@ -1,3 +1,4 @@
+#include <string>
 template <typename T> struct Less {
   bool operator()(const T a, const T b) { return a < b; }
 };
@@ -39,4 +40,25 @@ public:
   void clear();
   int size();
   void display();
+  void dump();
+  void load();
+  struct Iter {
+    Node *p;
+    Iter() : p(nullptr) {}
+    Iter(Node *rhs) : p(rhs) {}
+    // 避免值的改变
+    Node &operator*() const { return *p; }
+    Node *operator->() const { return (p); }
+    bool operator==(const Iter &rhs) const { return p == rhs.p; }
+    bool operator!=(const Iter &rhs) const { return p != rhs.p; }
+    void operator++(int) { p = p->next_[0]; }
+  };
+  Iter begin();
+  Iter end();
+  Iter find_(const K &key);
+  V &operator[](const K &key);
 };
+
+// files
+bool file_exists(const std::string &filename);
+void create_file(const std::string &filename);

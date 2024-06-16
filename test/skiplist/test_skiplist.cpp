@@ -15,7 +15,7 @@ int main() {
   skiplist.insert(4, 4);
   skiplist.insert(5, 5);
   skiplist.insert(6, 6);
-
+  //  skiplist.load();
   std::cout << "-------------------Test Pass-------------------\n";
 
   std::cout << "-------------------Test Find-------------------\n";
@@ -33,8 +33,10 @@ int main() {
   skiplist.display();
   std::cout << "-------------------Test Pass-------------------\n";
 
-  std::cout << "-------------------Test Clear-------------------\n";
-  skiplist.clear();
-  skiplist.display();
-  std::cout << "-------------------Test Pass-------------------\n";
+  //  std::cout << "-------------------Test Clear-------------------\n";
+  //  skiplist.clear();
+  //  skiplist.display();
+  //  std::cout << "-------------------Test Pass-------------------\n";
+
+  skiplist.dump();
 }

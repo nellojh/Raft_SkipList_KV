@@ -7,6 +7,5 @@ add_library(skiplist STATIC ${SKIPLIST_SOURCES})
 
 # 设置库文件输出目录
 set_target_properties(skiplist PROPERTIES
-  ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib
+        ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib
 )
-

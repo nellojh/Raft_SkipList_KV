@@ -63,20 +63,13 @@ typename SkipList<K, V, Comp>::Node *SkipList<K, V, Comp>::find(const K &key,
 
 template <typename K, typename V, typename Comp>
 void SkipList<K, V, Comp>::insert(const K &key, const V &value) {
-  std::cout << "-----------------------1\n";
   Node *update[max_level_ + 1];
-  std::cout << "key=" << key << "\n";
   Node *p = find(key, update);
-
-  std::cout << "-----------------------2\n";
   if (p != nullptr && p->key_ == key) { // update
     p->value_ = value;
     return;
   }
-  std::cout << "-----------------------3\n";
-  int new_level_ = get_random_level();
-  std::cout << "123\n";
-  if (new_level_ > skip_list_level) {
+  int new_level_ = get_random_level() if (new_level_ > skip_list_level) {
     new_level_ = ++skip_list_level;
     update[new_level_] = head_;
   }
@@ -162,4 +155,25 @@ void SkipList<K, V, Comp>::clear() {
   head_->next_[skip_list_level] = tail_;
 }
 
-template class SkipList<int, int>; // 显式实例化
+// Iterator
+template <typename K, typename V, typename Comp>
+typename SkipList<K, V, Comp>::Iter SkipList<K, V, Comp>::begin() {
+  return Iter(head_->next_[0]);
+}
+
+template <typename K, typename V, typename Comp>
+typename SkipList<K, V, Comp>::Iter SkipList<K, V, Comp>::end() {
+  return Iter(tail_);
+}
+
+template <typename K, typename V, typename Comp>
+V &SkipList<K, V, Comp>::operator[](const K &key) {
+  Node *p = find(key);
+  if (p != tail_ && p->key_ == key) {
+    return p->value_;
+  }
+  throw std::out_of_range("Key not found in SkipList");
+}
+
+// template class SkipList<int, int>; // 显式实例化
+template class SkipList<int, int>;
