@@ -3,7 +3,6 @@
 ## Target list
 
 -[x] SkipList
-- 2024/6/16 完成
 -[ ] 简单多线程并行
 -[ ] bloom filter
 -[ ] 支持Arena
