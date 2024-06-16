@@ -1,5 +1,3 @@
 .cache
 cmake-build-debug
 .idea
-bin/*
-!bin/store/*
