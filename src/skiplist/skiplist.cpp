@@ -63,13 +63,16 @@ typename SkipList<K, V, Comp>::Node *SkipList<K, V, Comp>::find(const K &key,
 
 template <typename K, typename V, typename Comp>
 void SkipList<K, V, Comp>::insert(const K &key, const V &value) {
+  mtx_.lock();
   Node *update[max_level_ + 1];
   Node *p = find(key, update);
   if (p != nullptr && p->key_ == key) { // update
     p->value_ = value;
+    mtx_.unlock();
     return;
   }
-  int new_level_ = get_random_level() if (new_level_ > skip_list_level) {
+  int new_level_ = get_random_level();
+  if (new_level_ > skip_list_level) {
     new_level_ = ++skip_list_level;
     update[new_level_] = head_;
   }
@@ -80,6 +83,7 @@ void SkipList<K, V, Comp>::insert(const K &key, const V &value) {
     p->next_[i] = new_node;
   }
   element_count++;
+  mtx_.unlock();
 }
 
 template <typename K, typename V, typename Comp>
@@ -97,6 +101,7 @@ typename SkipList<K, V, Comp>::Node *SkipList<K, V, Comp>::find(const K &key) {
 }
 template <typename K, typename V, typename Comp>
 bool SkipList<K, V, Comp>::erase(const K &key) {
+  mtx_.lock();
   Node *find_ = nullptr;
   for (int cur_level = skip_list_level; cur_level >= 0; cur_level--) {
     Node *p = head_;
@@ -116,12 +121,14 @@ bool SkipList<K, V, Comp>::erase(const K &key) {
   }
 
   if (find_ == nullptr) {
+    mtx_.unlock();
     return false;
   } else {
     if (head_->next_[skip_list_level] == tail_) {
       skip_list_level--;
     }
     delete find_;
+    mtx_.unlock();
     return true;
   }
 }

@@ -4,7 +4,8 @@
 
 - [x] SkipList
     - 完成 2024/6/16
-- [ ] 简单多线程并行
+- [x] 简单多线程并行
+    - 完成
 - [ ] bloom filter
 - [ ] 支持Arena
 - [ ] Raft

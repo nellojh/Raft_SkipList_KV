@@ -1,3 +1,4 @@
+#include <mutex>
 #include <string>
 template <typename T> struct Less {
   bool operator()(const T a, const T b) { return a < b; }
@@ -26,7 +27,7 @@ private:
   int element_count;
   Node *head_, *tail_;
   Comp comp;
-
+  std::mutex mtx_;
   Node *find(const K &key, Node **update);
 
 public:
